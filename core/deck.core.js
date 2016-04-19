@@ -341,7 +341,7 @@ that use the API provided by core.
 
     removeContainerHashClass($.deck('getSlide', from).attr('id'));
     addContainerHashClass($.deck('getSlide', to).attr('id'));
-    if (Modernizr.history) {
+    if (Modernizr.history && window.location.protocol != 'file:') {
       window.history.replaceState({}, "", hashPath);
     }
   };
